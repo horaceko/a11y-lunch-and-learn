@@ -1,0 +1,39 @@
+@import "mixins";
+
+.background {
+  opacity: 0.1;
+}
+
+.widget {
+  font-size: 3em;
+  position: relative;
+  display: block;
+  margin-bottom: 0.5em;
+
+  input {
+    @include sr-only;
+  }
+
+  label {
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.05s ease-in-out;
+  }
+
+  input:checked + label {
+    opacity: 1;
+  }
+}
+
+.label:hover label {
+  opacity: 0.5;
+}
+
+.label:active label {
+  opacity: 1;
+}
+
+.label,
+.background {
+  position: absolute;
+}
